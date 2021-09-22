@@ -147,7 +147,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("data.csv").then(function(data, err) {
+d3.csv("./assets/data/data.csv").then(function(data, err) {
   if (err) throw err;
 
   // parse data
@@ -212,7 +212,7 @@ d3.csv("data.csv").then(function(data, err) {
   var povertyLabel = xlabelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 20)
-    .attr("value", "poverty") // value to grab for event listener
+    .attr("value", "poverty") 
     .classed("active", true)
     .classed("aText", true)
     .text("In Poverty (%)");
@@ -220,7 +220,7 @@ d3.csv("data.csv").then(function(data, err) {
   var ageLabel = xlabelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 40)
-    .attr("value", "age") // value to grab for event listener
+    .attr("value", "age")
     .classed("inactive", true)
     .classed("aText", true)
     .text("Age (Median)");
@@ -228,7 +228,7 @@ d3.csv("data.csv").then(function(data, err) {
     var incomeLabel = xlabelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 60)
-    .attr("value", "income") // value to grab for event listener
+    .attr("value", "income") 
     .classed("inactive", true)
     .classed("aText", true)
     .text("Household income (Median)");
@@ -240,9 +240,8 @@ d3.csv("data.csv").then(function(data, err) {
   var healthcareLabel = ylabelsGroup.append("text")
     .attr("x", - (height / 10))
     .attr("y", -20)
-    // .attr("dy", "1em")
     .attr("transform", "rotate(-90)")
-    .attr("value", "healthcare") // value to grab for event listener
+    .attr("value", "healthcare")
     .classed("active", true)
     .classed("aText", true)
     .text("Lacks Healthcare (%)");
@@ -250,18 +249,16 @@ d3.csv("data.csv").then(function(data, err) {
     var smokesLabel = ylabelsGroup.append("text")
     .attr("x", - (height / 10))
     .attr("y", -40)
-    // .attr("dy", "1em")
     .attr("transform", "rotate(-90)")
-    .attr("value", "smokes") // value to grab for event listener
+    .attr("value", "smokes") 
     .classed("inactive", true)
     .text("Smokes (%)");
 
     var obesityLabel = ylabelsGroup.append("text")
     .attr("x", - (height / 10))
     .attr("y", -60)
-    // .attr("dy", "1em")
     .attr("transform", "rotate(-90)")
-    .attr("value", "obesity") // value to grab for event listener
+    .attr("value", "obesity") 
     .classed("inactive", true)
     .text("Obesity (%)");
 
